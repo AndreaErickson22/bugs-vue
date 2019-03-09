@@ -1,18 +1,82 @@
 <template>
   <div class="home">
+    <!-- tenative form -->
+    <div class="home container-fluid">
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">Tell me about your bug</span>
+            </div>
+            <form @submit.prevent="makeBugs">
+              <input
+                v-model="newBug.creator"
+                type="text"
+                aria-label="user name"
+                placeholder="user name"
+                class="form-control"
+              >
+              <input
+                v-model="newBug.description"
+                type="text"
+                aria-label="bug description"
+                placeholder="bug description"
+                class="form-control"
+              >
+              <input
+                v-model="newBug.title"
+                type="text"
+                aria-label="bug title"
+                placeholder="bug title"
+                class="form-control"
+              >
+              <button type="submit">Enter the bugger</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- <bugs v-for="bug in bugs" :bugData="bug" :key="bug._id"></bugs> -->
+    </div>
+    <div class="home container-fluid">
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <Bugs></Bugs>
+        </div>
+      </div>
+    </div>
+    <!-- <Bugs></Bugs> -->
+    <Notes></Notes>
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+
+import Bugs from "@/components/Bugs.vue";
+import Notes from "@/components/Notes.vue";
 
 export default {
-  name: 'home',
+  name: "home",
+  data() {
+    return {
+      newBug: {
+        creator: "",
+        description: "",
+        title: ""
+      }
+    };
+  },
+  methods: {
+    makeBugs() {
+      this.$store.dispatch("addBug", this.newBug);
+    }
+  },
   components: {
-    HelloWorld
+    Bugs,
+    Notes
   }
-}
+};
 </script>
+<style scoped>
+</style>

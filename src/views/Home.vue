@@ -1,9 +1,9 @@
 <template>
   <div class="home">
     <!-- tenative form -->
-    <div class="home container-fluid">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col d-flex justify-content-center">
+        <div id="FORM" class="col-12 d-flex justify-content-center">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">Tell me about your bug</span>
@@ -30,7 +30,7 @@
                 placeholder="bug title"
                 class="form-control"
               >
-              <button type="submit">Enter the bugger</button>
+              <button type="submit">Submit the bugger</button>
             </form>
           </div>
         </div>
@@ -71,6 +71,12 @@ export default {
     makeBugs() {
       this.$store.dispatch("addBug", this.newBug);
     }
+    // markDone:{
+    //   function(done){
+    //     console.log(done)
+    //     this.isDone = true
+    //   }
+    // }
   },
   components: {
     Bugs,
@@ -79,4 +85,13 @@ export default {
 };
 </script>
 <style scoped>
+#FORM {
+  justify-content: center;
+}
+.input-group {
+  justify-content: center;
+}
+.done {
+  text-decoration: line-through red;
+}
 </style>

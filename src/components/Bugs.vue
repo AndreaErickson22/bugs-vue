@@ -1,23 +1,30 @@
 <template>
-  <div class="Bugs">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="bug in bugs">
-          <th scope="row">•</th>
-          <td>{{bug.title}}</td>
-          <td>{{bug.description}}</td>
-          <td>{{bug.creator}}</td>
-        </tr>
-      </tbody>
-    </table>
+  <div id="TABLE" class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="Bugs">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Bug Title</th>
+              <th scope="col">Bug Description</th>
+              <th scope="col">Creator</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="bug in bugs">
+              <th scope="row">•</th>
+              <td>{{bug.title}}</td>
+              <td>{{bug.description}}</td>
+              <td>{{bug.creator}}</td>
+
+              <button @click="addComment">Comment</button>
+              <!-- <button @click="markDone">Complete</button> -->
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -29,6 +36,9 @@ export default {
     return {
       activeBug: {}
     };
+    // return {
+    //   isDone: false,
+    // }
   },
   mounted() {
     this.$store.dispatch("initialize");
@@ -43,7 +53,15 @@ export default {
     setActiveBug(bugs) {
       this.activeBug = bugs;
     }
+    // toggleDone(){
+    //   this.isDone = !this.isDone;
+    //
   },
   components: {}
 };
 </script>
+<style>
+#TABLE {
+  margin-top: 20px;
+}
+</style>

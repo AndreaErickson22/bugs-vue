@@ -46,7 +46,22 @@ export default new Vuex.Store({
           commit('setBugs', res.data.results)
         })
     },
+    addNote({ commit, dispatch }, payload) {
+      _sandboxApi.post('notes', payload)
+        .then(res => {
+          console.log(res)
+          dispatch('initialize')
+        }
+        )
+    },
 
+    initializeNote({ commit }) {
+      _sandboxApi.get('notes')
+        .then(res => {
+          console.log(res.data)
+          commit('setNotes', res.data.results)
+        })
+    },
     getNotes({ commit }, payload) {
       _sandboxApi.get('bugs/' + payload.id + '/notes')
         .then(res => {

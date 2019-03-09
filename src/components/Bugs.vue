@@ -9,6 +9,9 @@
               <th scope="col">Bug Title</th>
               <th scope="col">Bug Description</th>
               <th scope="col">Creator</th>
+              <th scope="col">Closed</th>
+              <th scope="col">Date Closed</th>
+              <th scope="col">Comment</th>
             </tr>
           </thead>
           <tbody>
@@ -17,6 +20,8 @@
               <td>{{bug.title}}</td>
               <td>{{bug.description}}</td>
               <td>{{bug.creator}}</td>
+              <td>{{bug.closed}}</td>
+              <td>{{bug.closedDate}}</td>
 
               <button @click="addComment">Comment</button>
               <!-- <button @click="markDone">Complete</button> -->

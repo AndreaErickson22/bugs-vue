@@ -44,7 +44,7 @@
         </div>
       </div>
     </div>
-    <!-- <Bugs></Bugs> -->
+
     <Notes></Notes>
     <img alt="Vue logo" src="../assets/logo.png">
   </div>
@@ -63,7 +63,9 @@ export default {
       newBug: {
         creator: "",
         description: "",
-        title: ""
+        title: "",
+        closed: "",
+        closedDate: ""
       }
     };
   },

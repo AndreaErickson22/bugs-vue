@@ -1,8 +1,22 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <!-- Image and text -->
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img
+            src="/Users/andrea/source/codeworks/bugs/src/assets/bugsbee-8.png"
+            width="30"
+            height="30"
+            class="d-inline-block align-top"
+            alt
+          >
+          Bug Report
+        </a>
+      </nav>
+
+      <router-link to="/">Home</router-link>|
+      <router-link to="/about">Details</router-link>
     </div>
     <router-view/>
   </div>
@@ -10,7 +24,7 @@
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

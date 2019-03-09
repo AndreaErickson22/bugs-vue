@@ -8,7 +8,8 @@ export default {
   props: [],
   data() {
     return {
-      activeBugs: {}
+      activeBugs: {},
+      activeNotes: {}
     };
   },
   computed: {
@@ -19,6 +20,9 @@ export default {
   methods: {
     setActiveBug(bugs) {
       this.activeBug = bugs;
+    },
+    setActiveNote(notes) {
+      this.activeNote = notes;
     }
   },
   components: {}

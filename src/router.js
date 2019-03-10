@@ -13,10 +13,10 @@ export default new Router({
       component: Home
     },
     {
-      path: '/details',
+      path: '/:id',
       props: true,
       name: 'details',
-      components: Details
+      component: Details
     }, {
       path: '*',
       redirect: '/'

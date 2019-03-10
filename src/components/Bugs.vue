@@ -14,8 +14,8 @@
               <th scope="col">Comment</th>
             </tr>
           </thead>
-          <tbody>
-            <tr v-for="bug in bugs">
+          <tbody v-for="bug in bugs" :key="bug.id">
+            <tr @click="setActiveBug(bug); $router.push({name: 'details', params:{id: bug._id}})">
               <th scope="row">•</th>
               <td>{{bug.title}}</td>
               <td>{{bug.description}}</td>
@@ -23,7 +23,7 @@
               <td>{{bug.closed}}</td>
               <td>{{bug.closedDate}}</td>
 
-              <button @click="activeBug">SET ACT BUG - Comment</button>
+              <button>SET ACT BUG - Comment</button>
               <!-- <button @click="markDone">Complete</button> -->
             </tr>
           </tbody>
@@ -55,12 +55,9 @@ export default {
     }
   },
   methods: {
-    setActiveBug(bugs) {
-      this.activeBug = bugs;
+    setActiveBug(bug) {
+      this.$store.dispatch("setActiveBug", bug);
     }
-    // toggleDone(){
-    //   this.isDone = !this.isDone;
-    //
   },
   components: {}
 };

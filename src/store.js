@@ -47,7 +47,7 @@ export default new Vuex.Store({
         })
     },
     addNote({ commit, dispatch }, payload) {
-      _sandboxApi.post('notes', payload)
+      _sandboxApi.post('bugs/:id/notes', payload)
         .then(res => {
           console.log(res)
           dispatch('initialize')
@@ -56,7 +56,7 @@ export default new Vuex.Store({
     },
 
     initializeNote({ commit }) {
-      _sandboxApi.get('notes')
+      _sandboxApi.get('bugs/:id/notes')
         .then(res => {
           console.log(res.data)
           commit('setNotes', res.data.results)
@@ -69,13 +69,24 @@ export default new Vuex.Store({
         })
     },
 
-    setActiveBug({ commit }, payload) {
+    setActiveBug({ commit, dispatch }, payload) {
+      debugger
       commit('setActiveBug', payload)
     },
 
-    createBug({ commit }, payload) {
-      commit('createBug', res.data.createBug)
+    getActiveLog({ commit, dispatch }, payload) {
+      _sandboxApi.get('bugs/:id')
+        .then(res => {
+          commit('setActiveLog', res.data.results)
+        })
     },
+    // createBug({ commit }, payload) {
+    //   commit('createBug', res.data.createBug)
+    // },
+
+    deleteNotes({ commit }, payload) {
+      commit('deleteBug', res.data.deleteBug)
+    }
 
   }
 })

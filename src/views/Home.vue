@@ -30,7 +30,7 @@
                 placeholder="bug title"
                 class="form-control"
               >
-              <button @click="setActiveBug" type="submit">Submit the bugger</button>
+              <button type="submit">Submit the bugger</button>
             </form>
           </div>
         </div>
@@ -46,7 +46,6 @@
     </div>
 
     <Notes></Notes>
-    <img alt="Vue logo" src="../assets/logo.png">
   </div>
 </template>
 
@@ -54,7 +53,7 @@
 // @ is an alias to /src
 
 import Bugs from "@/components/Bugs.vue";
-import Notes from "@/components/Notes.vue";
+// import Notes from "@/components/Notes.vue";
 
 export default {
   name: "home",
@@ -63,9 +62,7 @@ export default {
       newBug: {
         creator: "",
         description: "",
-        title: "",
-        closed: "",
-        closedDate: ""
+        title: ""
       }
     };
   },
@@ -81,8 +78,7 @@ export default {
     // }
   },
   components: {
-    Bugs,
-    Notes
+    Bugs
   }
 };
 </script>

@@ -23,7 +23,7 @@
               <td>{{bug.closed}}</td>
               <td>{{bug.closedDate}}</td>
 
-              <button @click="addComment">Comment</button>
+              <button @click="activeBug">SET ACT BUG - Comment</button>
               <!-- <button @click="markDone">Complete</button> -->
             </tr>
           </tbody>

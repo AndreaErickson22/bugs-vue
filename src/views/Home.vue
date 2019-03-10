@@ -3,7 +3,7 @@
     <!-- tenative form -->
     <div class="container-fluid">
       <div class="row">
-        <div id="FORM" class="col-12 d-flex justify-content-center">
+        <div id="FORM" class="col d-flex justify-content-center">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">Tell me about your bug</span>
@@ -30,7 +30,7 @@
                 placeholder="bug title"
                 class="form-control"
               >
-              <button type="submit">Submit the bugger</button>
+              <button @click="setActiveBug" type="submit">Submit the bugger</button>
             </form>
           </div>
         </div>
@@ -89,6 +89,7 @@ export default {
 <style scoped>
 #FORM {
   justify-content: center;
+  margin-top: 10px;
 }
 .input-group {
   justify-content: center;

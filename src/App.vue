@@ -1,23 +1,57 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" class="col d-flex justify-content-center">
       <!-- Image and text -->
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
           <img
-            src="/Users/andrea/source/codeworks/bugs/src/assets/bugsbee-8.png"
-            width="30"
-            height="30"
+            src="./assets/bugsbee-8.png"
+            width="40"
+            height="40"
             class="d-inline-block align-top"
             alt
           >
-          Bug Report
+          <img
+            src="./assets/bugsbutterfly-8.png"
+            width="40"
+            height="40"
+            class="d-inline-block align-top"
+            alt
+          >
+          <img
+            src="./assets/bugsladybug-8.png"
+            width="40"
+            height="40"
+            class="d-inline-block align-top"
+            alt
+          >
+          Bug Log List and Application
+          <img
+            src="./assets/bugsladybug-8.png"
+            width="40"
+            height="40"
+            class="d-inline-block align-top"
+            alt
+          >
+          <img
+            src="./assets/bugsbutterfly-8.png"
+            width="40"
+            height="40"
+            class="d-inline-block align-top"
+            alt
+          >
+          <img
+            src="./assets/bugsbee-8.png"
+            width="40"
+            height="40"
+            class="d-inline-block align-top"
+            alt
+          >
         </a>
       </nav>
-
-      <router-link to="/">Home</router-link>|
-      <router-link to="/about">Details</router-link>
     </div>
+    <router-link to="/">Home</router-link>|
+    <router-link to="/about">Details</router-link>
     <router-view/>
   </div>
 </template>

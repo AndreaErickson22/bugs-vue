@@ -23,13 +23,13 @@
                 class="form-control"
               >
               <input
-                v-model="newBug.creator"
+                v-model="newNote.creator"
                 type="text"
                 aria-label="name who made note"
                 placeholder="name who made note"
                 class="form-control"
               >
-              <button @click="setActiveNote" type="submit">Submit the note</button>
+              <button type="submit">Submit the note</button>
             </form>
           </div>
         </div>
@@ -53,10 +53,11 @@
 <script>
 export default {
   name: "notes",
-  props: [],
+  props: ["noteData"],
   data() {
     return {
       activeBugs: {},
+      activeBug: {},
       activeNotes: {}
     };
   },

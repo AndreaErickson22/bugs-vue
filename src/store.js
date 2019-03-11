@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 import Axios from 'axios'
 
 var _sandboxApi = Axios.create({
-  baseURL: 'https://bcw-sandbox.herokuapp.com/api/Andrea',
+  baseURL: 'https://bcw-sandbox.herokuapp.com/api/Andreas',
   timeout: 3000,
 
 })
@@ -70,7 +70,6 @@ export default new Vuex.Store({
     },
 
     setActiveBug({ commit, dispatch }, payload) {
-      debugger
       commit('setActiveBug', payload)
     },
 

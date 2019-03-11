@@ -6,7 +6,7 @@
         <div id="FORM" class="col d-flex justify-content-center">
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text">Tell me about your bug</span>
+              <span class="input-group-text">Tell Us About Your Bugs</span>
             </div>
             <form @submit.prevent="makeBugs">
               <input
@@ -30,7 +30,7 @@
                 placeholder="bug title"
                 class="form-control"
               >
-              <button type="submit">Submit the bugger</button>
+              <button id="Submit-Bugger" type="submit">Submit the bug that's buggin' you</button>
             </form>
           </div>
         </div>
@@ -45,7 +45,7 @@
       </div>
     </div>
 
-    <Notes></Notes>
+    <notes></notes>
   </div>
 </template>
 
@@ -53,7 +53,7 @@
 // @ is an alias to /src
 
 import Bugs from "@/components/Bugs.vue";
-// import Notes from "@/components/Notes.vue";
+import Notes from "@/components/Notes.vue";
 
 export default {
   name: "home",
@@ -87,10 +87,46 @@ export default {
   justify-content: center;
   margin-top: 10px;
 }
+.input-group-text {
+  background: rgb(254, 254, 254);
+  color: rgb(249, 99, 7);
+  width: 400px;
+  text-align: center;
+  justify-content: center;
+  font: bold;
+}
+span {
+  text-align: center;
+}
+.input-group-prepend {
+  justify-content: center;
+}
 .input-group {
   justify-content: center;
+  width: 50%;
 }
 .done {
   text-decoration: line-through red;
+}
+.todo-item {
+  background: #f4f4f4;
+  padding: 10px;
+  border-bottom: 1px #ccc dotted;
+}
+.is-complete {
+  text-decoration: line-through;
+}
+.form-control {
+  width: 400px;
+  text-align: center;
+}
+#Submit-Bugger {
+  background-color: rgb(249, 99, 7);
+
+  color: white;
+  width: 400px;
+  padding-botton: 5px;
+  padding-top: 5px;
+  font-weight: 500px;
 }
 </style>

@@ -2,7 +2,7 @@
   <div id="app">
     <div id="nav" class="col d-flex justify-content-center">
       <!-- Image and text -->
-      <nav class="navbar navbar-light bg-light">
+      <nav class="navbar navbar-light">
         <a class="navbar-brand" href="#">
           <img
             src="./assets/bugsbee-8.png"
@@ -51,12 +51,15 @@
       </nav>
     </div>
     <router-link to="/">Home</router-link>|
-    <router-link to="/about">Details</router-link>
+    <router-link to="/details">Details</router-link>
     <router-view/>
   </div>
 </template>
 
 <style>
+router-link {
+  color: black;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -66,11 +69,17 @@
 }
 #nav {
   padding: 30px;
+  width: 100%;
 }
 
 #nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #171311;
+  background-color: #42f1f4;
+  width: 100%;
+  justify-content: center;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 #nav a.router-link-exact-active {

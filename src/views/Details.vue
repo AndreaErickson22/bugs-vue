@@ -3,7 +3,6 @@
     <div class="col-12 d-flex justify-content-center">
       <div class="home container-fluid">
         <div class="row">
-          <Notes></Notes>
           <div class="col d-flex justify-content-center">
             <table class="table">
               <thead class="bg-light">
@@ -17,7 +16,7 @@
                   <th scope="col">Comment</th>
                 </tr>
               </thead>
-              <tbody v-for="bug in activeBug" :key="bug.id">
+              <tbody>
                 <tr>
                   <th scope="row">•</th>
                   <td>{{bug.title}}</td>
@@ -30,6 +29,18 @@
             </table>
           </div>
         </div>
+      </div>
+    </div>
+    <Notes></Notes>
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <form>
+          <div @submit.prevent="makeNote" class="form-group">
+            <label for="exampleFormControlTextarea1">Enter your comments about the bug here!</label>
+            <textarea class="form-control" id="bugNoteComment" rows="3"></textarea>
+          </div>
+          <button @click="setActiveNote">SET ACTIVE NOTE- Comment</button>
+        </form>
       </div>
     </div>
   </div>
@@ -52,8 +63,8 @@ export default {
     };
   },
   computed: {
-    activeBug() {
-      return this.$store.state.acitveBug;
+    bug() {
+      return this.$store.state.activeBug;
     }
   },
   methods: {

@@ -15,13 +15,7 @@
                 placeholder="new note"
                 class="form-control"
               >
-              <input
-                v-model="newNote.bug"
-                type="text"
-                aria-label="bug description id"
-                placeholder="bug description id"
-                class="form-control"
-              >
+              
               <input
                 v-model="newNote.creator"
                 type="text"
@@ -29,21 +23,9 @@
                 placeholder="name who made note"
                 class="form-control"
               >
-              <button type="submit">Submit the note</button>
+              <button type="submit-note">Submit the note</button>
             </form>
           </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col d-flex justify-content-center">
-          <form>
-            <div @submit.prevent="makeNotes" class="form-group">
-              <label for="exampleFormControlTextarea1">Enter your comments about the bug here!</label>
-              <textarea class="form-control" id="bugNoteComment" rows="3"></textarea>
-            </div>
-            <button @click="setActiveNote">SET ACTIVE NOTE- Comment</button>
-          </form>
         </div>
       </div>
     </div>
@@ -56,13 +38,19 @@ export default {
   props: ["noteData"],
   data() {
     return {
-      activeBugs: {},
+      activeBugs: [],
       activeBug: {},
-      activeNotes: {}
+      activeNotes: {},
+      newNote: {
+        content: "",
+        creator: "",
+        bug: this.activeBug._id
+      }
     };
   },
   mounted() {
-    this.$store.dispatch("initializeNote");
+    let id = this.$route.params.id;
+    this.$store.dispatch("initializeNote", noteData.bug);
   },
   computed: {
     notes() {
@@ -75,6 +63,9 @@ export default {
     },
     setActiveNote(notes) {
       this.activeNote = notes;
+    },
+    makeNote() {
+      this.$store.dispatch("addNote", this.newNote);
     }
   },
   components: {}

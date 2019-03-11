@@ -75,7 +75,7 @@ router-link {
 #nav a {
   font-weight: bold;
   color: #171311;
-  background-color: #42f1f4;
+  background-color: #16d1e6;
   width: 100%;
   justify-content: center;
   padding-left: 100px;

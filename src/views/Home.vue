@@ -78,7 +78,8 @@ export default {
     // }
   },
   components: {
-    Bugs
+    Bugs,
+    Notes
   }
 };
 </script>
